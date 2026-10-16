@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Public source EEG is reproducibly downloaded and is too large for Git.
+data/
+
+# Local smoke-test output; final analysis tables/figures may be committed selectively.
+results/smoke_*
+results/*features.csv.gz
