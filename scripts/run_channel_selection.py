@@ -112,18 +112,6 @@ def selection_model() -> Pipeline:
     )
 
 
-def tuned_model(inner_splits: int) -> GridSearchCV:
-    pipeline = selection_model()
-    return GridSearchCV(
-        pipeline,
-        {"model__C": [0.01, 0.1, 1.0, 10.0]},
-        scoring="balanced_accuracy",
-        cv=inner_splits,
-        n_jobs=-1,
-        refit=True,
-    )
-
-
 def screen_channels(
     x: pd.DataFrame,
     y: np.ndarray,
